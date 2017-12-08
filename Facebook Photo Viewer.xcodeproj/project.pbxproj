@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6DDC17244BA32C05154E738 /* Pods_Facebook_Photo_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */; };
 		E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A281FDAECC500FD5425 /* AppDelegate.swift */; };
 		E6C13A2B1FDAECC500FD5425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A2A1FDAECC500FD5425 /* ViewController.swift */; };
 		E6C13A2E1FDAECC500FD5425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C13A2C1FDAECC500FD5425 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EB4682BB585B4FFA56DB1B5 /* Pods-Facebook Photo Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.release.xcconfig"; sourceTree = "<group>"; };
+		A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.debug.xcconfig"; sourceTree = "<group>"; };
+		A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facebook_Photo_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A251FDAECC500FD5425 /* Facebook Photo Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Photo Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A281FDAECC500FD5425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6C13A2A1FDAECC500FD5425 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DDC17244BA32C05154E738 /* Pods_Facebook_Photo_Viewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EF77B29EC1871EC8BC75D9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */,
+				1EB4682BB585B4FFA56DB1B5 /* Pods-Facebook Photo Viewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B4B7A1F4F29F3D4BF5D3BEC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6C13A1C1FDAECC500FD5425 = {
 			isa = PBXGroup;
 			children = (
 				E6C13A271FDAECC500FD5425 /* Facebook Photo Viewer */,
 				E6C13A261FDAECC500FD5425 /* Products */,
+				1EF77B29EC1871EC8BC75D9F /* Pods */,
+				B4B7A1F4F29F3D4BF5D3BEC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6C13A371FDAECC500FD5425 /* Build configuration list for PBXNativeTarget "Facebook Photo Viewer" */;
 			buildPhases = (
+				B7F11F7B54F12B52B7A2CFF7 /* [CP] Check Pods Manifest.lock */,
 				E6C13A211FDAECC500FD5425 /* Sources */,
 				E6C13A221FDAECC500FD5425 /* Frameworks */,
 				E6C13A231FDAECC500FD5425 /* Resources */,
+				FF791176956923E0DCAAB2D4 /* [CP] Embed Pods Frameworks */,
+				09A1D975250A6EBFB475DB80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,72 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09A1D975250A6EBFB475DB80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F11F7B54F12B52B7A2CFF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Facebook Photo Viewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF791176956923E0DCAAB2D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6C13A211FDAECC500FD5425 /* Sources */ = {
@@ -272,6 +365,7 @@
 		};
 		E6C13A381FDAECC500FD5425 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +381,7 @@
 		};
 		E6C13A391FDAECC500FD5425 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EB4682BB585B4FFA56DB1B5 /* Pods-Facebook Photo Viewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
