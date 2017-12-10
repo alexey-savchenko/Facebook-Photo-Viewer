@@ -18,7 +18,7 @@ class PhotoListCell: UICollectionViewCell {
   }
   
   func configureWithPhoto(_ photo: Photo) {
-    photoThumbnail.sd_setImage(with: photo.photoURL, completed: nil)
+    photoThumbnail.sd_setImage(with: photo.thumbnailURL, completed: nil)
   }
   
 }

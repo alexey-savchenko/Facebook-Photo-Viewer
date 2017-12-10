@@ -110,6 +110,8 @@ extension AlbumPhotosListVC: UICollectionViewDelegate, UICollectionViewDataSourc
   func collectionView(_ collectionView: UICollectionView,
                       didSelectItemAt indexPath: IndexPath) {
     
+    flowDelegate.didSelectPhoto(photos[indexPath.row])
+    
   }
   
 }

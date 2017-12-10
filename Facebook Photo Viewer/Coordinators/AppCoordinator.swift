@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import FacebookCore
 import FBSDKLoginKit
+import FacebookLogin
 
 protocol Coordinator: class {
   
@@ -70,20 +71,12 @@ class AppCoordinator: Coordinator {
 
     } else {
       
-      let albumListCoordinator = AlbumFlowCoordinator()
+      let albumListCoordinator = AlbumFlowCoordinator(with: self)
       albumListCoordinator.start()
       
       rootViewController.present(albumListCoordinator.rootViewController,
                                  animated: true, completion: nil)
       
-      //User logged in. Show album list
-
-//      let request = GraphRequest(graphPath: "me",
-//                                 parameters: ["fields": "name, gender, picture.type(large), email, link"],
-//                                 accessToken: AccessToken.current,
-//                                 httpMethod: .GET,
-//                                 apiVersion: GraphAPIVersion.defaultVersion)
-
     }
     
   }
@@ -105,7 +98,7 @@ extension AppCoordinator: LoginFlowDelegate {
       //Store user id in UserDefaults
       UserDefaults.standard.set(userID, forKey: "currentUserID")
       
-      let albumListCoordinator = AlbumFlowCoordinator()
+      let albumListCoordinator = AlbumFlowCoordinator(with: self)
       albumListCoordinator.start()
       
       rootViewController.present(albumListCoordinator.rootViewController,
@@ -116,6 +109,23 @@ extension AppCoordinator: LoginFlowDelegate {
       print(error)
       
     }
+    
+  }
+
+}
+
+extension AppCoordinator: FlowCoordinatorDelegate {
+  
+  func dissmisFlow(of coordinator: Coordinator) {
+    
+    LoginManager().logOut()
+    
+    childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    coordinator.rootViewController.dismiss(animated: true, completion: nil)
+    
+    let loginVC = LoginVC()
+    loginVC.delegate = self
+    navigationController.viewControllers = [loginVC]
     
   }
 

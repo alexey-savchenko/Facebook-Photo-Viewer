@@ -9,6 +9,7 @@
 import Foundation
 
 struct Photo {
-  let photoURL: URL
+  let thumbnailURL: URL
+  let fullSizeImageURL: URL
   let ID: String
 }

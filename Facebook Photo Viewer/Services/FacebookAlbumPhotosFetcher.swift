@@ -15,7 +15,7 @@ class FacebookAlbumPhotosFetcher: AlbumPhotoFetchService {
   func fetchPhotosOfAlbumWithID(_ ID: String, completion: @escaping ((Result<[Photo]>)->())) {
     
     let request = GraphRequest(graphPath: "\(ID)/photos",
-      parameters: ["fields": "picture, name"],
+      parameters: ["fields": "picture, name, images"],
       accessToken: AccessToken.current,
       httpMethod: .GET,
       apiVersion: GraphAPIVersion.defaultVersion)

@@ -31,18 +31,27 @@ class AlbumFlowCoordinator: Coordinator {
     
   }
   
+  let albumFlowCoordinatorDelegate: FlowCoordinatorDelegate
+  
+  init(with coordinatorDelegate: FlowCoordinatorDelegate) {
+    self.albumFlowCoordinatorDelegate = coordinatorDelegate
+  }
   
 }
 
 extension AlbumFlowCoordinator: AlbumListFlowDelegate {
   
+  func logoutTap() {
+    albumFlowCoordinatorDelegate.dissmisFlow(of: self)
+  }
+  
+  
   func didSelectAlbum(_ album: Album) {
-    
-    print(album)
     
     let albumPhotosListViewModel = AlbumPhotosListViewModel(with: FacebookAlbumPhotosFetcher(), albumID: album.ID)
     let albumPhotosListVC = AlbumPhotosListVC(with: albumPhotosListViewModel,
                                               photoListFlowDelegate: self)
+    
     navigationController.pushViewController(albumPhotosListVC, animated: true)
     
   }

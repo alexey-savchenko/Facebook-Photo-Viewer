@@ -28,8 +28,15 @@ class AlbumListVC: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  @objc private func logoutButtonTap(){
+    flowDelegate.logoutTap()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let logOutItem = UIBarButtonItem(title: "Log out", style: .done, target: self, action: #selector(logoutButtonTap))
+    navigationItem.rightBarButtonItems = [logOutItem]
     
     view.backgroundColor = .white
     
@@ -77,6 +84,10 @@ class AlbumListVC: UIViewController {
                                  albumsList.topAnchor.constraint(equalTo: safeArea.topAnchor),
                                  albumsList.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
                                  albumsList.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)])
+  }
+  
+  deinit {
+    print("\(self) dealloc")
   }
   
 }

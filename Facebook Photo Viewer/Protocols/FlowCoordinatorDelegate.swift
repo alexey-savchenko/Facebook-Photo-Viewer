@@ -1,5 +1,5 @@
 //
-//  AlbumListFlowDelegate.swift
+//  FlowCoordinatorDelegate.swift
 //  Facebook Photo Viewer
 //
 //  Created by Alexey Savchenko on 10.12.2017.
@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol AlbumListFlowDelegate: class {
-  func didSelectAlbum(_ album: Album)
-  func logoutTap()
+import Foundation
+
+protocol FlowCoordinatorDelegate {
+  
+  func dissmisFlow(of coordinator: Coordinator)
+  
 }

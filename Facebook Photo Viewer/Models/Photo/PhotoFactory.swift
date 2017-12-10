@@ -12,8 +12,11 @@ import SwiftyJSON
 class PhotoFactory {
   static func makePhotoFromJSON(_ json: JSON) -> Photo? {
     if let id = json["id"].string,
-      let pictureURLString = json["picture"].string {
-      return Photo(photoURL: URL.init(string: pictureURLString)!, ID: id)
+      let pictureURLString = json["picture"].string,
+      let fullsizeImageURLString = json["images"].arrayValue[0]["source"].string {
+      return Photo(thumbnailURL: URL(string: pictureURLString)!,
+                   fullSizeImageURL: URL(string: fullsizeImageURLString)!,
+                   ID: id)
     } else {
       return nil
     }
