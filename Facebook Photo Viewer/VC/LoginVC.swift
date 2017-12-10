@@ -19,8 +19,6 @@ class LoginVC: UIViewController {
   
   let loginButton = UIButton()
   
-  let logOutButton = UIButton()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -46,23 +44,6 @@ class LoginVC: UIViewController {
     loginButton.setTitleColor(.blue, for: .normal)
     loginButton.setTitleColor(UIColor.lightGray, for: .highlighted)
     
-    logOutButton.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(logOutButton)
-    NSLayoutConstraint.activate([logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                 logOutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-                                 logOutButton.heightAnchor.constraint(equalToConstant: 44),
-                                 logOutButton.widthAnchor.constraint(equalToConstant: 200)])
-    
-    logOutButton.setTitle("Log out", for: .normal)
-    logOutButton.addTarget(self, action: #selector(logoutButtonTap(_:)), for: .touchUpInside)
-    logOutButton.setTitleColor(.blue, for: .normal)
-    logOutButton.setTitleColor(UIColor.lightGray, for: .highlighted)
-    
-  }
-  
-  @objc private func logoutButtonTap(_ sender: UIButton) {
-    loginManager.logOut()
-    print("Logged out")
   }
   
   @objc private func loginButtonTap(_ sender: UIButton) {
