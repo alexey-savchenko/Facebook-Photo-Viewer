@@ -16,7 +16,7 @@ class AlbumListVC: UIViewController {
   
   private let albumsList = UITableView()
   
-  let flowDelegate: AlbumListFlowDelegate
+  weak var flowDelegate: AlbumListFlowDelegate?
   
   init(with viewModel: AlbumListViewModelType, flowDelegate: AlbumListFlowDelegate) {
     self.flowDelegate = flowDelegate
@@ -29,7 +29,7 @@ class AlbumListVC: UIViewController {
   }
   
   @objc private func logoutButtonTap(){
-    flowDelegate.logoutTap()
+    flowDelegate?.logoutTap()
   }
   
   override func viewDidLoad() {
@@ -109,7 +109,7 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    flowDelegate.didSelectAlbum(albums[indexPath.row])
+    flowDelegate?.didSelectAlbum(albums[indexPath.row])
     
   }
   

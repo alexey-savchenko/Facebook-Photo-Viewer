@@ -37,6 +37,10 @@ class AlbumFlowCoordinator: Coordinator {
     self.albumFlowCoordinatorDelegate = coordinatorDelegate
   }
   
+  deinit {
+    print("\(self) dealloc")
+  }
+  
 }
 
 extension AlbumFlowCoordinator: AlbumListFlowDelegate {

@@ -10,7 +10,7 @@ import Foundation
 
 import Foundation
 
-protocol FlowCoordinatorDelegate {
+protocol FlowCoordinatorDelegate: class {
   
   func dissmisFlow(of coordinator: Coordinator)
   

@@ -40,7 +40,6 @@ class AlbumPhotosListVC: UIViewController {
       switch result {
       case let .success(photos):
         
-        print(photos)
         self.photos = photos
         self.photoList.reloadData()
         

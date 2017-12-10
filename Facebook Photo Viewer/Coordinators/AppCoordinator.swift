@@ -72,6 +72,7 @@ class AppCoordinator: Coordinator {
     } else {
       
       let albumListCoordinator = AlbumFlowCoordinator(with: self)
+      addChildCoordinator(albumListCoordinator)
       albumListCoordinator.start()
       
       rootViewController.present(albumListCoordinator.rootViewController,
@@ -99,8 +100,8 @@ extension AppCoordinator: LoginFlowDelegate {
       UserDefaults.standard.set(userID, forKey: "currentUserID")
       
       let albumListCoordinator = AlbumFlowCoordinator(with: self)
+      addChildCoordinator(albumListCoordinator)
       albumListCoordinator.start()
-      
       rootViewController.present(albumListCoordinator.rootViewController,
                                  animated: true, completion: nil)
 
@@ -120,7 +121,7 @@ extension AppCoordinator: FlowCoordinatorDelegate {
     
     LoginManager().logOut()
     
-    childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    removeChildCoordinator(coordinator)
     coordinator.rootViewController.dismiss(animated: true, completion: nil)
     
     let loginVC = LoginVC()
