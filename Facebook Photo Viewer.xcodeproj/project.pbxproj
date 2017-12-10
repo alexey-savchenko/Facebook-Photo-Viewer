@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8071DF551FDB087100BD6AAE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DF541FDB087100BD6AAE /* AppCoordinator.swift */; };
+		80FF1E821FDD251600D300AB /* LoginFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E811FDD251600D300AB /* LoginFlowDelegate.swift */; };
+		80FF1E851FDD2B2A00D300AB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E841FDD2B2A00D300AB /* Utils.swift */; };
+		80FF1E871FDD2CAC00D300AB /* AlbumListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */; };
+		80FF1E891FDD2D1400D300AB /* AlbumListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */; };
+		80FF1E8B1FDD396200D300AB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E8A1FDD396200D300AB /* Result.swift */; };
 		C6DDC17244BA32C05154E738 /* Pods_Facebook_Photo_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */; };
 		E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A281FDAECC500FD5425 /* AppDelegate.swift */; };
-		E6C13A2B1FDAECC500FD5425 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A2A1FDAECC500FD5425 /* ViewController.swift */; };
+		E6C13A2B1FDAECC500FD5425 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */; };
 		E6C13A2E1FDAECC500FD5425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C13A2C1FDAECC500FD5425 /* Main.storyboard */; };
 		E6C13A301FDAECC500FD5425 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6C13A2F1FDAECC500FD5425 /* Assets.xcassets */; };
 		E6C13A331FDAECC500FD5425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6C13A311FDAECC500FD5425 /* LaunchScreen.storyboard */; };
@@ -17,11 +23,17 @@
 
 /* Begin PBXFileReference section */
 		1EB4682BB585B4FFA56DB1B5 /* Pods-Facebook Photo Viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.release.xcconfig"; sourceTree = "<group>"; };
+		8071DF541FDB087100BD6AAE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		80FF1E811FDD251600D300AB /* LoginFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowDelegate.swift; sourceTree = "<group>"; };
+		80FF1E841FDD2B2A00D300AB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListVC.swift; sourceTree = "<group>"; };
+		80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModelType.swift; sourceTree = "<group>"; };
+		80FF1E8A1FDD396200D300AB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facebook_Photo_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A251FDAECC500FD5425 /* Facebook Photo Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Photo Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A281FDAECC500FD5425 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6C13A2A1FDAECC500FD5425 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E6C13A2D1FDAECC500FD5425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6C13A2F1FDAECC500FD5425 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6C13A321FDAECC500FD5425 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +59,48 @@
 				1EB4682BB585B4FFA56DB1B5 /* Pods-Facebook Photo Viewer.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		80FF1E7F1FDD234500D300AB /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				8071DF541FDB087100BD6AAE /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		80FF1E801FDD235400D300AB /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */,
+				80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		80FF1E831FDD251B00D300AB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				80FF1E811FDD251600D300AB /* LoginFlowDelegate.swift */,
+				80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		80FF1E8C1FDD399900D300AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80FF1E8A1FDD396200D300AB /* Result.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80FF1E8D1FDD39A100D300AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				80FF1E841FDD2B2A00D300AB /* Utils.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B4B7A1F4F29F3D4BF5D3BEC6 /* Frameworks */ = {
@@ -79,11 +133,15 @@
 			isa = PBXGroup;
 			children = (
 				E6C13A281FDAECC500FD5425 /* AppDelegate.swift */,
-				E6C13A2A1FDAECC500FD5425 /* ViewController.swift */,
+				80FF1E801FDD235400D300AB /* VC */,
+				80FF1E7F1FDD234500D300AB /* Coordinators */,
 				E6C13A2C1FDAECC500FD5425 /* Main.storyboard */,
 				E6C13A2F1FDAECC500FD5425 /* Assets.xcassets */,
 				E6C13A311FDAECC500FD5425 /* LaunchScreen.storyboard */,
 				E6C13A341FDAECC500FD5425 /* Info.plist */,
+				80FF1E831FDD251B00D300AB /* Protocols */,
+				80FF1E8D1FDD39A100D300AB /* Helpers */,
+				80FF1E8C1FDD399900D300AB /* Models */,
 			);
 			path = "Facebook Photo Viewer";
 			sourceTree = "<group>";
@@ -229,7 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6C13A2B1FDAECC500FD5425 /* ViewController.swift in Sources */,
+				80FF1E891FDD2D1400D300AB /* AlbumListViewModelType.swift in Sources */,
+				80FF1E851FDD2B2A00D300AB /* Utils.swift in Sources */,
+				8071DF551FDB087100BD6AAE /* AppCoordinator.swift in Sources */,
+				E6C13A2B1FDAECC500FD5425 /* LoginVC.swift in Sources */,
+				80FF1E821FDD251600D300AB /* LoginFlowDelegate.swift in Sources */,
+				80FF1E871FDD2CAC00D300AB /* AlbumListVC.swift in Sources */,
+				80FF1E8B1FDD396200D300AB /* Result.swift in Sources */,
 				E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
