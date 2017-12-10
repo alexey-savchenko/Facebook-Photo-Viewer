@@ -33,6 +33,7 @@
 		80FF1EB81FDD661F00D300AB /* PhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1EB61FDD661F00D300AB /* PhotoListCell.swift */; };
 		80FF1EB91FDD661F00D300AB /* PhotoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF1EB71FDD661F00D300AB /* PhotoListCell.xib */; };
 		80FF1EBD1FDD6F3200D300AB /* FlowCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1EBC1FDD6F3200D300AB /* FlowCoordinatorDelegate.swift */; };
+		80FF1EBF1FDD724700D300AB /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1EBE1FDD724700D300AB /* PhotoVC.swift */; };
 		C6DDC17244BA32C05154E738 /* Pods_Facebook_Photo_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */; };
 		E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A281FDAECC500FD5425 /* AppDelegate.swift */; };
 		E6C13A2B1FDAECC500FD5425 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */; };
@@ -69,6 +70,7 @@
 		80FF1EB61FDD661F00D300AB /* PhotoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCell.swift; sourceTree = "<group>"; };
 		80FF1EB71FDD661F00D300AB /* PhotoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoListCell.xib; sourceTree = "<group>"; };
 		80FF1EBC1FDD6F3200D300AB /* FlowCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		80FF1EBE1FDD724700D300AB /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facebook_Photo_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A251FDAECC500FD5425 /* Facebook Photo Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Photo Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 				E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */,
 				80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */,
 				80FF1EA41FDD589000D300AB /* AlbumPhotosListVC.swift */,
+				80FF1EBE1FDD724700D300AB /* PhotoVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				80FF1E9E1FDD4D7E00D300AB /* AlbumFlowCoordinator.swift in Sources */,
 				80FF1E8F1FDD481600D300AB /* Album.swift in Sources */,
 				80FF1E871FDD2CAC00D300AB /* AlbumListVC.swift in Sources */,
+				80FF1EBF1FDD724700D300AB /* PhotoVC.swift in Sources */,
 				80FF1E8B1FDD396200D300AB /* Result.swift in Sources */,
 				80FF1EAF1FDD5A0500D300AB /* PhotoFactory.swift in Sources */,
 				80FF1E9A1FDD4C4000D300AB /* AlbumFetchService.swift in Sources */,

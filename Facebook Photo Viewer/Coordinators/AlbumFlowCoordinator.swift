@@ -65,6 +65,9 @@ extension AlbumFlowCoordinator: PhotoListFlowDelegate {
   
   func didSelectPhoto(_ photo: Photo) {
     print(photo)
+    
+    navigationController.pushViewController(PhotoVC.init(with: photo.fullSizeImageURL), animated: true)
+    
   }
   
   
