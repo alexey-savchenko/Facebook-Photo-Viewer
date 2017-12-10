@@ -94,10 +94,7 @@ extension AppCoordinator: LoginFlowDelegate {
     
     switch result {
       
-    case let .success(userID):
-      
-      //Store user id in UserDefaults
-      UserDefaults.standard.set(userID, forKey: "currentUserID")
+    case .success(_):
       
       let albumListCoordinator = AlbumFlowCoordinator(with: self)
       addChildCoordinator(albumListCoordinator)
