@@ -23,5 +23,7 @@ class AlbumListViewModel: AlbumListViewModelType {
       
     }
   }
-  
+  deinit {
+    print("\(self) dealloc")
+  }
 }

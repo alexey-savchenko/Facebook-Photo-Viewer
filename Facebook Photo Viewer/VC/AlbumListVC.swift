@@ -53,7 +53,6 @@ class AlbumListVC: UIViewController {
         
       }
       
-      
     }
     
   }
@@ -62,7 +61,7 @@ class AlbumListVC: UIViewController {
   private func setUpAlbumList() {
     
     albumsList.rowHeight = 150
-//    albumsList.estimatedRowHeight = 200
+    
     albumsList.delegate = self
     albumsList.dataSource = self
     

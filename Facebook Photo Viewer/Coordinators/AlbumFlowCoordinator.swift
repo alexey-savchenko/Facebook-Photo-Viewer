@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FacebookCore
 
 class AlbumFlowCoordinator: Coordinator {
   
@@ -39,8 +40,19 @@ extension AlbumFlowCoordinator: AlbumListFlowDelegate {
     
     print(album)
     
-    
+    let albumPhotosListViewModel = AlbumPhotosListViewModel(with: FacebookAlbumPhotosFetcher(), albumID: album.ID)
+    let albumPhotosListVC = AlbumPhotosListVC(with: albumPhotosListViewModel,
+                                              photoListFlowDelegate: self)
+    navigationController.pushViewController(albumPhotosListVC, animated: true)
     
   }
+  
+}
+extension AlbumFlowCoordinator: PhotoListFlowDelegate {
+  
+  func didSelectPhoto(_ photo: Photo) {
+    print(photo)
+  }
+  
   
 }

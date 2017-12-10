@@ -28,16 +28,12 @@ class FacebookAlbumFetcher: AlbumFetchService {
         
         if let rawAlbumData = response.dictionaryValue?["data"] {
           if let jsonAlbums = JSON(rawAlbumData).array {
-//            for item in jsonAlbums {
-//              print(item)
-//              print("-------------")
-//            }
             
             let albums = jsonAlbums.flatMap { AlbumFactory.makeAlbumFromJSON($0) }
             completion(Result.success(value: albums))
             
-          }
-        }
+          } else { completion(Result.failure(error: "Cannot get photos")) }
+        } else { completion(Result.failure(error: "Cannot get photos")) }
         
         
       case let .failed(error):
