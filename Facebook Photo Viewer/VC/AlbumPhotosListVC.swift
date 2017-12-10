@@ -13,7 +13,7 @@ class AlbumPhotosListVC: UIViewController {
   
   private var viewModel: AlbumPhotosListViewModelType
   
-  private var albums = [Photo]()
+  private var photos = [Photo]()
   
   private let photoList = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
   
@@ -32,21 +32,84 @@ class AlbumPhotosListVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    view.backgroundColor = .white
     
+    setUpPhotoList()
     
     viewModel.fetchPhotosOfAlbumWithID { (result) in
       switch result {
       case let .success(photos):
+        
         print(photos)
-        break
+        self.photos = photos
+        self.photoList.reloadData()
+        
       case let .failure(error):
-        break
+        self.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
       }
     }
     
   }
   
+  private func setUpPhotoList() {
+    
+    photoList.delegate = self
+    photoList.dataSource = self
+    
+    photoList.register(UINib.init(nibName: "PhotoListCell", bundle: nil), forCellWithReuseIdentifier: "PhotoListCell")
+    
+    view.addSubview(photoList)
+    photoList.translatesAutoresizingMaskIntoConstraints = false
+    
+    let safeArea = view.safeAreaLayoutGuide
+    
+    NSLayoutConstraint.activate([photoList.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+                                 photoList.topAnchor.constraint(equalTo: safeArea.topAnchor),
+                                 photoList.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+                                 photoList.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)])
+  }
+  
   deinit {
     print("\(self) dealloc")
   }
+}
+
+extension AlbumPhotosListVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView,
+                      numberOfItemsInSection section: Int) -> Int {
+    return photos.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoListCell",
+                                                  for: indexPath) as! PhotoListCell
+    cell.configureWithPhoto(photos[indexPath.row])
+    return cell
+    
+  }
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    return CGSize(width: view.bounds.width / 2, height: view.bounds.width / 2)
+    
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return 0
+  }
+  
+  
+  func collectionView(_ collectionView: UICollectionView,
+                      didSelectItemAt indexPath: IndexPath) {
+    
+  }
+  
 }

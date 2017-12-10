@@ -25,7 +25,7 @@ class FacebookAlbumPhotosFetcher: AlbumPhotoFetchService {
       
       switch requestResult {
       case let .success(response):
-      
+        
         if let rawPhotosData = response.dictionaryValue?["data"] {
           if let jsonAlbums = JSON(rawPhotosData).array {
             
@@ -43,5 +43,7 @@ class FacebookAlbumPhotosFetcher: AlbumPhotoFetchService {
     })
     
   }
-  
+  deinit {
+    print("\(self) dealloc")
+  }
 }

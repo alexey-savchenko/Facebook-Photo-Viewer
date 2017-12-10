@@ -42,5 +42,7 @@ class FacebookAlbumFetcher: AlbumFetchService {
       
     })
   }
-  
+  deinit {
+    print("\(self) dealloc")
+  }
 }
