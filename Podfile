@@ -7,6 +7,8 @@ target 'Facebook Photo Viewer' do
 	pod 'FacebookCore'
 	pod 'FacebookLogin'
 	pod 'FacebookShare'
+  pod 'SwiftyJSON'
+  pod 'SDWebImage'
   # Pods for Facebook Photo Viewer
 
 end

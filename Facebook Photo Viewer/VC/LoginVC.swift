@@ -79,7 +79,7 @@ class LoginVC: UIViewController {
                           self.present(Utils.alertWithMessage(message: error.localizedDescription),
                                        animated: true, completion: nil)
 
-                        case let .success(grantedPermissions: granted, declinedPermissions: declined, token: token):
+                        case let .success(_, _, token: token):
                           
                           if let currentUserID = token.userId {                            
                             self.delegate?.didFinishLoginFlow(with: Result.success(value: currentUserID))

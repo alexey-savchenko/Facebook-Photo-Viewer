@@ -10,7 +10,7 @@ import Foundation
 
 typealias FacebookUserID = String
 
-protocol LoginFlowDelegate {
+protocol LoginFlowDelegate: class {
   
   func didFinishLoginFlow(with result: Result<FacebookUserID>)
   

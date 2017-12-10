@@ -13,6 +13,11 @@
 		80FF1E871FDD2CAC00D300AB /* AlbumListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */; };
 		80FF1E891FDD2D1400D300AB /* AlbumListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */; };
 		80FF1E8B1FDD396200D300AB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E8A1FDD396200D300AB /* Result.swift */; };
+		80FF1E8F1FDD481600D300AB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E8E1FDD481600D300AB /* Album.swift */; };
+		80FF1E911FDD487E00D300AB /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E901FDD487E00D300AB /* AlbumListViewModel.swift */; };
+		80FF1E961FDD4A3C00D300AB /* AlbumListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E941FDD4A3C00D300AB /* AlbumListCell.swift */; };
+		80FF1E971FDD4A3C00D300AB /* AlbumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FF1E951FDD4A3C00D300AB /* AlbumListCell.xib */; };
+		80FF1E9A1FDD4C4000D300AB /* AlbumFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF1E991FDD4C4000D300AB /* AlbumFetchService.swift */; };
 		C6DDC17244BA32C05154E738 /* Pods_Facebook_Photo_Viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */; };
 		E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A281FDAECC500FD5425 /* AppDelegate.swift */; };
 		E6C13A2B1FDAECC500FD5425 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C13A2A1FDAECC500FD5425 /* LoginVC.swift */; };
@@ -29,6 +34,11 @@
 		80FF1E861FDD2CAC00D300AB /* AlbumListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListVC.swift; sourceTree = "<group>"; };
 		80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModelType.swift; sourceTree = "<group>"; };
 		80FF1E8A1FDD396200D300AB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		80FF1E8E1FDD481600D300AB /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		80FF1E901FDD487E00D300AB /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		80FF1E941FDD4A3C00D300AB /* AlbumListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCell.swift; sourceTree = "<group>"; };
+		80FF1E951FDD4A3C00D300AB /* AlbumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumListCell.xib; sourceTree = "<group>"; };
+		80FF1E991FDD4C4000D300AB /* AlbumFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFetchService.swift; sourceTree = "<group>"; };
 		A234C0EC2952682229B14DEF /* Pods-Facebook Photo Viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facebook Photo Viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Facebook Photo Viewer/Pods-Facebook Photo Viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5533A3265667753872F1F /* Pods_Facebook_Photo_Viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facebook_Photo_Viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6C13A251FDAECC500FD5425 /* Facebook Photo Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Photo Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +93,7 @@
 			children = (
 				80FF1E811FDD251600D300AB /* LoginFlowDelegate.swift */,
 				80FF1E881FDD2D1400D300AB /* AlbumListViewModelType.swift */,
+				80FF1E991FDD4C4000D300AB /* AlbumFetchService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -91,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				80FF1E8A1FDD396200D300AB /* Result.swift */,
+				80FF1E8E1FDD481600D300AB /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +113,23 @@
 				80FF1E841FDD2B2A00D300AB /* Utils.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		80FF1E921FDD489100D300AB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				80FF1E901FDD487E00D300AB /* AlbumListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		80FF1E981FDD4A4100D300AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				80FF1E941FDD4A3C00D300AB /* AlbumListCell.swift */,
+				80FF1E951FDD4A3C00D300AB /* AlbumListCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B4B7A1F4F29F3D4BF5D3BEC6 /* Frameworks */ = {
@@ -133,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				E6C13A281FDAECC500FD5425 /* AppDelegate.swift */,
-				80FF1E801FDD235400D300AB /* VC */,
-				80FF1E7F1FDD234500D300AB /* Coordinators */,
 				E6C13A2C1FDAECC500FD5425 /* Main.storyboard */,
 				E6C13A2F1FDAECC500FD5425 /* Assets.xcassets */,
 				E6C13A311FDAECC500FD5425 /* LaunchScreen.storyboard */,
@@ -142,6 +169,10 @@
 				80FF1E831FDD251B00D300AB /* Protocols */,
 				80FF1E8D1FDD39A100D300AB /* Helpers */,
 				80FF1E8C1FDD399900D300AB /* Models */,
+				80FF1E7F1FDD234500D300AB /* Coordinators */,
+				80FF1E801FDD235400D300AB /* VC */,
+				80FF1E921FDD489100D300AB /* ViewModels */,
+				80FF1E981FDD4A4100D300AB /* Views */,
 			);
 			path = "Facebook Photo Viewer";
 			sourceTree = "<group>";
@@ -211,6 +242,7 @@
 				E6C13A331FDAECC500FD5425 /* LaunchScreen.storyboard in Resources */,
 				E6C13A301FDAECC500FD5425 /* Assets.xcassets in Resources */,
 				E6C13A2E1FDAECC500FD5425 /* Main.storyboard in Resources */,
+				80FF1E971FDD4A3C00D300AB /* AlbumListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +296,8 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -274,6 +308,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -291,9 +327,13 @@
 				80FF1E851FDD2B2A00D300AB /* Utils.swift in Sources */,
 				8071DF551FDB087100BD6AAE /* AppCoordinator.swift in Sources */,
 				E6C13A2B1FDAECC500FD5425 /* LoginVC.swift in Sources */,
+				80FF1E911FDD487E00D300AB /* AlbumListViewModel.swift in Sources */,
 				80FF1E821FDD251600D300AB /* LoginFlowDelegate.swift in Sources */,
+				80FF1E961FDD4A3C00D300AB /* AlbumListCell.swift in Sources */,
+				80FF1E8F1FDD481600D300AB /* Album.swift in Sources */,
 				80FF1E871FDD2CAC00D300AB /* AlbumListVC.swift in Sources */,
 				80FF1E8B1FDD396200D300AB /* Result.swift in Sources */,
+				80FF1E9A1FDD4C4000D300AB /* AlbumFetchService.swift in Sources */,
 				E6C13A291FDAECC500FD5425 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

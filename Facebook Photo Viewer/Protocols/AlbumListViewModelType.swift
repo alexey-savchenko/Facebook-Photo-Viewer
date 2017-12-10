@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol AlbumListViewModelType {
+protocol AlbumListViewModelType: class {
   
-  
+  func fetchAlbums(completion: @escaping (([Album])->()))
   
 }
