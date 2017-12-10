@@ -1,5 +1,5 @@
 //
-//  AlbumFetchService.swift
+//  AlbumListFlowDelegate.swift
 //  Facebook Photo Viewer
 //
 //  Created by Alexey Savchenko on 10.12.2017.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-protocol AlbumFetchService: class {
-  
-  func fetchAlbums(completion: @escaping ((Result<[Album]>)->()))
-  
+protocol AlbumListFlowDelegate: class {
+  func didSelectAlbum(_ album: Album)
 }

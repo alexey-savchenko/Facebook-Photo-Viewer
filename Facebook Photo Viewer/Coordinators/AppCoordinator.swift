@@ -69,6 +69,13 @@ class AppCoordinator: Coordinator {
       navigationController.viewControllers = [loginVC]
 
     } else {
+      
+      let albumListCoordinator = AlbumFlowCoordinator()
+      albumListCoordinator.start()
+      
+      rootViewController.present(albumListCoordinator.rootViewController,
+                                 animated: true, completion: nil)
+      
       //User logged in. Show album list
 
 //      let request = GraphRequest(graphPath: "me",
@@ -98,28 +105,12 @@ extension AppCoordinator: LoginFlowDelegate {
       //Store user id in UserDefaults
       UserDefaults.standard.set(userID, forKey: "currentUserID")
       
-      let request = GraphRequest(graphPath: "/me/albums",
-                                 parameters: ["fields": "picture, name"],
-                                 accessToken: AccessToken.current,
-                                 httpMethod: .GET,
-                                 apiVersion: GraphAPIVersion.defaultVersion)
+      let albumListCoordinator = AlbumFlowCoordinator()
+      albumListCoordinator.start()
+      
+      rootViewController.present(albumListCoordinator.rootViewController,
+                                 animated: true, completion: nil)
 
-      request.start({ (response, requestResult) in
-        
-        
-        switch requestResult {
-        case let .success(response):
-          
-          if let dic = response.dictionaryValue?["data"] {
-            print(String.init(describing: dic))
-          }
-          
-          
-        case let .failed(error):
-          print(error)
-        }
-        
-      })
     case let .failure(error):
       
       print(error)

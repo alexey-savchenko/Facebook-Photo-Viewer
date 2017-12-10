@@ -16,9 +16,11 @@ class AlbumListViewModel: AlbumListViewModelType {
     service = fetchService
   }
   
-  func fetchAlbums(completion: @escaping (([Album]) -> ())) {
-    service.fetchAlbums { (albums) in
-      completion(albums)
+  func fetchAlbums(completion: @escaping ((Result<[Album]>) -> ())) {
+    service.fetchAlbums { (fetchResult) in
+      
+      completion(fetchResult)
+      
     }
   }
   

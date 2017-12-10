@@ -16,8 +16,10 @@ class AlbumListVC: UIViewController {
   
   private let albumsList = UITableView()
   
-  init(with viewModel: AlbumListViewModelType) {
-   
+  let flowDelegate: AlbumListFlowDelegate
+  
+  init(with viewModel: AlbumListViewModelType, flowDelegate: AlbumListFlowDelegate) {
+    self.flowDelegate = flowDelegate
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
@@ -28,13 +30,29 @@ class AlbumListVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     view.backgroundColor = .white
     
-    viewModel.fetchAlbums { [weak self] (albums) in
+    navigationItem.title = "Album list"
+    
+    setUpAlbumList()
+    
+    viewModel.fetchAlbums { [weak self] (albumsFetchResult) in
       
       guard let `self` = self else { return }
       
-      self.albums = albums
+      switch albumsFetchResult {
+      case let .success(albums):
+        
+        self.albums = albums
+        self.albumsList.reloadData()
+        
+      case let .failure(error):
+        
+        self.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
+        
+      }
+      
       
     }
     
@@ -42,11 +60,14 @@ class AlbumListVC: UIViewController {
   
   
   private func setUpAlbumList() {
+    
+    albumsList.rowHeight = 150
+//    albumsList.estimatedRowHeight = 200
     albumsList.delegate = self
     albumsList.dataSource = self
     
     albumsList.register(UINib(nibName: "AlbumListCell", bundle: nil),
-                                 forCellReuseIdentifier: "AlbumListCell")
+                        forCellReuseIdentifier: "AlbumListCell")
     
     view.addSubview(albumsList)
     albumsList.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +97,11 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
     
   }
   
-  
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    flowDelegate.didSelectAlbum(albums[indexPath.row])
+    
+  }
   
 }
+

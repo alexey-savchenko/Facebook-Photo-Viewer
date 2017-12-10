@@ -10,6 +10,6 @@ import Foundation
 
 protocol AlbumListViewModelType: class {
   
-  func fetchAlbums(completion: @escaping (([Album])->()))
+  func fetchAlbums(completion: @escaping ((Result<[Album]>)->()))
   
 }

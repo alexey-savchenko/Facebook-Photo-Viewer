@@ -17,8 +17,8 @@ class AlbumListCell: UITableViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     
-    
-    
+    contentView.clipsToBounds = true
+    albumThumbnailImageView.clipsToBounds = true
   }
   
   func configureWith(_ album: Album) {
