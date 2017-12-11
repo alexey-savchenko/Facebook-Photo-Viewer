@@ -12,16 +12,21 @@ import SwiftyJSON
 
 class FacebookAlbumPhotosFetcher: AlbumPhotoFetchService {
   
-  func fetchPhotosOfAlbumWithID(_ ID: String, completion: @escaping ((Result<[Photo]>)->())) {
+  private let albumID: String
+  
+  init(albumID: String) {
+    self.albumID = albumID
+  }
+  
+  func fetchPhotosOfAlbum(completion: @escaping ((Result<[Photo]>)->())) {
     
-    let request = GraphRequest(graphPath: "\(ID)/photos",
+    let request = GraphRequest(graphPath: "\(albumID)/photos",
       parameters: ["fields": "picture, name, images"],
       accessToken: AccessToken.current,
       httpMethod: .GET,
       apiVersion: GraphAPIVersion.defaultVersion)
     
     request.start({ (response, requestResult) in
-      
       
       switch requestResult {
       case let .success(response):

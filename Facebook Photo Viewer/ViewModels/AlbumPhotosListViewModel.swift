@@ -12,15 +12,12 @@ class AlbumPhotosListViewModel: AlbumPhotosListViewModelType {
   
   private let service: AlbumPhotoFetchService
   
-  private let albumID: String
-  
-  init(with fetchService: AlbumPhotoFetchService, albumID: String) {
+  init(with fetchService: AlbumPhotoFetchService) {
     self.service = fetchService
-    self.albumID = albumID
   }
   
-  func fetchPhotosOfAlbumWithID(completion: @escaping ((Result<[Photo]>) -> ())) {
-    service.fetchPhotosOfAlbumWithID(albumID) { (result) in
+  func fetchPhotosOfAlbum(completion: @escaping ((Result<[Photo]>) -> ())) {
+    service.fetchPhotosOfAlbum { (result) in
       completion(result)
     }
   }
@@ -28,4 +25,7 @@ class AlbumPhotosListViewModel: AlbumPhotosListViewModelType {
   deinit {
     print("\(self) dealloc")
   }
+  
 }
+
+

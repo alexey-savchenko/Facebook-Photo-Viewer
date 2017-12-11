@@ -36,7 +36,7 @@ class AlbumPhotosListVC: UIViewController {
     
     setUpPhotoList()
     
-    viewModel.fetchPhotosOfAlbumWithID { (result) in
+    viewModel.fetchPhotosOfAlbum { (result) in
       switch result {
       case let .success(photos):
         

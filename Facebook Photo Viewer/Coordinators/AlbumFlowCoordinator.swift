@@ -52,7 +52,7 @@ extension AlbumFlowCoordinator: AlbumListFlowDelegate {
   
   func didSelectAlbum(_ album: Album) {
     
-    let albumPhotosListViewModel = AlbumPhotosListViewModel(with: FacebookAlbumPhotosFetcher(), albumID: album.ID)
+    let albumPhotosListViewModel = AlbumPhotosListViewModel(with: FacebookAlbumPhotosFetcher(albumID: album.ID))
     let albumPhotosListVC = AlbumPhotosListVC(with: albumPhotosListViewModel,
                                               photoListFlowDelegate: self)
     
