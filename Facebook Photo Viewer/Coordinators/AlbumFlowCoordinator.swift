@@ -25,7 +25,7 @@ class AlbumFlowCoordinator: Coordinator {
   
   func start() {
     
-    let albumListViewModel = AlbumListViewModel(withFetchService: FacebookAlbumFetcher())
+    let albumListViewModel = AlbumListViewModel()
     let albumListVC = AlbumListVC(with: albumListViewModel, flowDelegate: self)
     navigationController.viewControllers = [albumListVC]
     
@@ -48,11 +48,10 @@ extension AlbumFlowCoordinator: AlbumListFlowDelegate {
   func logoutTap() {
     albumFlowCoordinatorDelegate.dissmisFlow(of: self)
   }
-  
-  
+
   func didSelectAlbum(_ album: Album) {
     
-    let albumPhotosListViewModel = AlbumPhotosListViewModel(with: FacebookAlbumPhotosFetcher(albumID: album.ID))
+    let albumPhotosListViewModel = AlbumPhotosListViewModel(with: album.ID)
     let albumPhotosListVC = AlbumPhotosListVC(with: albumPhotosListViewModel,
                                               photoListFlowDelegate: self)
     
@@ -64,9 +63,8 @@ extension AlbumFlowCoordinator: AlbumListFlowDelegate {
 extension AlbumFlowCoordinator: PhotoListFlowDelegate {
   
   func didSelectPhoto(_ photo: Photo) {
-    print(photo)
-    
-    navigationController.pushViewController(PhotoVC.init(with: photo.fullSizeImageURL), animated: true)
+  
+    navigationController.pushViewController(PhotoVC(with: photo.fullSizeImageURL), animated: true)
     
   }
   

@@ -60,14 +60,11 @@ class LoginVC: UIViewController {
                           self.present(Utils.alertWithMessage(message: error.localizedDescription),
                                        animated: true, completion: nil)
 
-                        case let .success(_, _, token: token):
-                          
-                          if let currentUserID = token.userId {                            
-                            self.delegate?.didFinishLoginFlow(with: Result.success(value: currentUserID))
-                          } else {
-                            self.delegate?.didFinishLoginFlow(with: Result.failure(error: "Cennot get user ID."))
-                          }
-                          
+                        case .success(_, _, _):
+                        
+                          self.delegate?.didFinishLoginFlow(result: Result<Bool>.success(value: true))
+                        
+  
                         default:
                           break
                           

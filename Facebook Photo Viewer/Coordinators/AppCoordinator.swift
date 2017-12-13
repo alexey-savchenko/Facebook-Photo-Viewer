@@ -90,7 +90,7 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: LoginFlowDelegate {
   
-  func didFinishLoginFlow(with result: Result<FacebookUserID>) {
+  func didFinishLoginFlow(result: Result<Bool>) {
     
     switch result {
       
@@ -104,7 +104,7 @@ extension AppCoordinator: LoginFlowDelegate {
 
     case let .failure(error):
       
-      print(error)
+      print(error!)
       
     }
     

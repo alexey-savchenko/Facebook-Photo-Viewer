@@ -44,19 +44,18 @@ class AlbumListVC: UIViewController {
     
     setUpAlbumList()
     
-    viewModel.fetchAlbums { [weak self] (albumsFetchResult) in
+    viewModel.fetchAlbums()
+    
+    viewModel.didLoadAlbums = { [weak self] result in
       
-      guard let `self` = self else { return }
-      
-      switch albumsFetchResult {
-      case let .success(albums):
+      switch result {
         
-        self.albums = albums
-        self.albumsList.reloadData()
+      case .success(let albums):
+        self?.albums = albums
+        self?.albumsList.reloadData()
         
-      case let .failure(error):
-        
-        self.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
+      case .failure(let error):
+        self?.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
         
       }
       

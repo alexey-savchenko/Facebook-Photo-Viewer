@@ -35,17 +35,21 @@ class AlbumPhotosListVC: UIViewController {
     view.backgroundColor = .white
     
     setUpPhotoList()
+
+    viewModel.fetchPhotosOfAlbum()
     
-    viewModel.fetchPhotosOfAlbum { (result) in
+    viewModel.didLoadPhotos = { [weak self] result in
+      
       switch result {
       case let .success(photos):
         
-        self.photos = photos
-        self.photoList.reloadData()
+        self?.photos = photos
+        self?.photoList.reloadData()
         
       case let .failure(error):
-        self.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
+        self?.present(Utils.alertWithMessage(message: error!), animated: true, completion: nil)
       }
+      
     }
     
   }

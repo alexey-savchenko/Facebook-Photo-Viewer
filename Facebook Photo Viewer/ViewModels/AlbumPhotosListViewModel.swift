@@ -7,19 +7,39 @@
 //
 
 import Foundation
+import FacebookCore
 
 class AlbumPhotosListViewModel: AlbumPhotosListViewModelType {
   
-  private let service: AlbumPhotoFetchService
+  var didLoadPhotos: ((Result<[Photo]>) -> ())?
   
-  init(with fetchService: AlbumPhotoFetchService) {
-    self.service = fetchService
+  let albumID: String
+  
+  init(with albumID: String) {
+    self.albumID = albumID
   }
   
-  func fetchPhotosOfAlbum(completion: @escaping ((Result<[Photo]>) -> ())) {
-    service.fetchPhotosOfAlbum { (result) in
-      completion(result)
+  func fetchPhotosOfAlbum() {
+    webService.load(albumPhotosResourse(albumID)) { [unowned self] (result) in
+      self.didLoadPhotos?(result)
     }
+  }
+  
+  private let webService = WebService<[Photo]>()
+  
+  private let albumPhotosResourse: (String) -> Resourse<[Photo]> = { albumID in
+    
+    return Resourse<[Photo]>(request: GraphRequest(graphPath: "\(albumID)/photos",
+      parameters: ["fields": "picture, name, images"],
+      accessToken: AccessToken.current,
+      httpMethod: .GET,
+      apiVersion: GraphAPIVersion.defaultVersion), parse: { (jsonArray) -> [Photo] in
+        
+        let photos = jsonArray.flatMap { PhotoFactory.makePhotoFromJSON($0) }
+        return photos
+        
+    })
+    
   }
   
   deinit {

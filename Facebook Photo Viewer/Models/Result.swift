@@ -8,6 +8,7 @@
 
 import Foundation
 
+///Enum used to hold results of operations done.
 enum Result<T> {
   case success(value: T)
   case failure(error: String?)

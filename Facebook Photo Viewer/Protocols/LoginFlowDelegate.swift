@@ -8,10 +8,6 @@
 
 import Foundation
 
-typealias FacebookUserID = String
-
 protocol LoginFlowDelegate: class {
-  
-  func didFinishLoginFlow(with result: Result<FacebookUserID>)
-  
+  func didFinishLoginFlow(result: Result<Bool>)
 }
